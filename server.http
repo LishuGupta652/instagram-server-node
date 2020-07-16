@@ -1,0 +1,26 @@
+GET http://localhost:8080/
+
+###
+
+GET http://localhost:8080/signup
+
+
+###
+POST  http://localhost:8080/signup
+Content-Type: application/json
+
+{
+    "name": "lishugupta",
+    "email": "lishu@pakkabaniya.ml" ,
+    "password": "lishu652"
+}
+
+###
+POST  http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "email": "lishu@pakkabaniya.ml" ,
+    "password": "lishu652"
+}
+
