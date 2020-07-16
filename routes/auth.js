@@ -4,6 +4,8 @@ const User = mongoose.model("User");
 const { loginValidation, registerValidation } = require("../validation");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const requreLogin = require("../middleware/requireLogin");
+const requireLogin = require("../middleware/requireLogin");
 
 router.get("/", (req, res) => {
   res.send("hello Authentication ");
@@ -42,7 +44,7 @@ router.post("/signup", (req, res) => {
     });
 });
 
-router.get("/protected", (req, res) => {
+router.get("/protected", requireLogin, (req, res) => {
   res.send("hello User");
 });
 

@@ -1,0 +1,48 @@
+GET http://localhost:8080/
+
+###
+
+GET http://localhost:8080/signup
+
+
+###
+# register user
+POST  http://localhost:8080/signup
+Content-Type: application/json
+
+{
+    "name": "lishugupta",
+    "email": "lishu@pakkabaniya.ml" ,
+    "password": "lishu652"
+}
+
+###
+# login user
+POST  http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "email": "lishu@pakkabaniya.ml" ,
+    "password": "lishu652"
+}
+
+
+### 
+# Protected Route
+GET http://localhost:8080/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjEwMWNmMDA1NjlkMjFjNTQ5NGYwY2UiLCJpYXQiOjE1OTQ4OTE5NzF9.NzESpFEFGxtb3E9MwzbE6LF_O_N_TEhic6I36vUf_lw
+
+### 
+# Send post
+POST http://localhost:8080/createpost
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjEwMWNmMDA1NjlkMjFjNTQ5NGYwY2UiLCJpYXQiOjE1OTQ4OTE5NzF9.NzESpFEFGxtb3E9MwzbE6LF_O_N_TEhic6I36vUf_lw
+Content-Type: application/json
+
+{
+    "title": "This is the second post",
+    "body": "Thie is itheklafj alore lorem ipsom adf athaf jasdf ithaldkfm alkjfads lkjasdit akj lkajfd aijtkal lkjsliht alkjf aie kakjf lkajkthi  tihs i is the reud workd and this iis not gonna give us and us anything untill you are gonna give them something     in the return"
+}
+
+###
+# Get all Post
+GET http://localhost:8080/allpost
