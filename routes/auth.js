@@ -53,6 +53,8 @@ router.post("/login", (req, res) => {
   const { error } = loginValidation(req.body);
   if (error) res.status(422).send(error.details[0].message);
 
+  res.setHeader("Content-Type", "application/json");
+
   const { email, password } = req.body;
   User.findOne({ email }).then((savedUser) => {
     if (!savedUser) {

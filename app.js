@@ -3,12 +3,12 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
-// Connection to mongoDB
-mongoose.connect(
-  "mongodb+srv://lishugupta652:lishugupta652@instagram-cluster.xcxnv.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+const cors =
+  // Connection to mongoDB
+  mongoose.connect(
+    "mongodb+srv://lishugupta652:lishugupta652@instagram-cluster.xcxnv.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  );
 mongoose.connection.on("connected", () => {
   console.log("Connected to mongoDB");
 });
